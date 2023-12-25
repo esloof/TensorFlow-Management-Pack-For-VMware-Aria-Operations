@@ -58,7 +58,7 @@ def process_image(interpreter, image, input_index):
     result = []
 
     for idx, score in enumerate(scores):
-        if score > 0.1:
+        if score > 0.5: # changed back to 0.5 to eliminate false positives
             result.append({'pos': positions[idx], 'id': classes[idx]})
     return result
 
